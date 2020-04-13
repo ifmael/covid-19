@@ -7,7 +7,11 @@
   "author": "Ismael Rodriguez <ismael.rm.1986@gmail.com>",
   "license": "UNLICENSED",
   "scripts": {
-    "start": "sanity start",
+    "dev": "sanity start",
+    "format": "prettier-eslint --write \"**/*.js\" \"!node_modules/**\"",
+    "build": "sanity build",
+    "graphql-deploy": "sanity graphql deploy --playground",
+    "lint": "eslint .",
     "test": "sanity check"
   },
   "keywords": [
@@ -25,5 +29,17 @@
     "react": "^16.2",
     "react-dom": "^16.2"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-config-standard-react": "^9.2.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-standard": "^4.0.1",
+    "prettier": "^1.19.1",
+    "prettier-eslint-cli": "^5.0.0"
+  }
 }
