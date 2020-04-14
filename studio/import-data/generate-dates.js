@@ -12,19 +12,28 @@
     const dates =  Object.keys(csvConfirmed[0])
                          .filter(key => key !== 'Province/State' && key !== 'Country/Region' && key !== 'Lat' & key !== 'Long')
                          .map(date => {
-                           return {
-                            name: `date_${date.replace(/\//gi, '_')}`,
-                            title: `Info for date ${date}`,
-                            type: 'infoDate',
-                           }
+                            const [month,day,year] = date.split('/');
+                            const formattedDate = `date_${day}_${month}_${year}`;
+                            return {
+                              name: formattedDate,
+                              title: `Info for date ${formattedDate.slice(5).replace(/_/gi, '/')}`,
+                              type: 'infoDate',
+                            }
                          });
 
     const currentDirectory = path.join(__dirname);
+    const webDirectory = path.join(__dirname,'../../web/src/');
     const datesInJS = `export default{
       data: ${JSON.stringify(dates)}
     }`;
-    await fsp.writeFile(`${currentDirectory}/assets/dates.js`,datesInJS)
+    const datesRequireWay = `module.exports = {
+      data: ${JSON.stringify(dates)}
+    }`;
+
+    await fsp.writeFile(`${currentDirectory}/assets/dates.js`,datesInJS);
+    await fsp.writeFile(`${webDirectory}/assets/dates.js`,datesRequireWay);
     console.log(`File saved on: ${currentDirectory}/assets/dates.js`);
+    console.log(`File saved on: ${webDirectory}/assets/dates.js`);
   } catch (error) {
     console.log(error);
   }
