@@ -11,6 +11,7 @@
     "add-time-series": "node ./import-data/add-time-series.js",
     "build": "sanity build",
     "dev": "sanity start",
+    "delete-entries": "node ./import-data/delete-entries.js",
     "format": "prettier-eslint --write \"**/*.js\" \"!node_modules/**\"",
     "generate-dates": "node ./import-data/generate-dates",
     "graphql-deploy": "sanity graphql deploy --playground",
