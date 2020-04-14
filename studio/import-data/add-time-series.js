@@ -23,7 +23,7 @@
     const countries = await client.fetch(query);
 
     Promise.all(TIME_SERIES_URL.map(timeSerie => axios.get(timeSerie)))
-      .then(async ([confirmed, deaths, recovered]) => {
+      .then(async ([ confirmed, deaths, recovered ]) => {
         const csvConfirmed = await csv().fromString(confirmed.data);
         const confirmedGroupByCountry = _.groupBy(csvConfirmed, 'Country/Region');
         const csvDeath = await csv().fromString(deaths.data);

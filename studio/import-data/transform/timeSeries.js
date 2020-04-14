@@ -15,9 +15,10 @@ module.exports = {
     const recoveredCountry= groupByRegionsForCountry(recoveredCases);
     const deathsCountry = groupByRegionsForCountry(deathsCases);
     const dates = Object.keys(confirmedCountry);
-    
+
     return dates.reduce((result, date )=>{
-      result[`date_${date.replace(/\//gi, '_')}`] = {
+      const [month,day,year] = date.split('/');
+      result[`date_${day}_${month}_${year}`] = {
         confirmed: confirmedCountry[date],
         recovered: recoveredCountry[date],
         deaths: deathsCountry[date]
@@ -37,5 +38,4 @@ module.exports = {
       country: {_type: 'reference', _ref: infoCountry.id}
     }
   }
-
 }
