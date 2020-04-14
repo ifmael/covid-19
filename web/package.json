@@ -5,7 +5,6 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "dotenv": "^8.2.0",
     "gatsby": "^2.20.12",
     "gatsby-image": "^2.3.1",
     "gatsby-plugin-manifest": "^2.3.3",
@@ -21,6 +20,7 @@
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
+    "dotenv": "^8.2.0",
     "eslint": "^6.8.0",
     "eslint-config-standard": "^14.1.1",
     "eslint-config-standard-react": "^9.2.0",

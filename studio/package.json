@@ -5,11 +5,14 @@
   "description": "",
   "main": "package.json",
   "author": "Ismael Rodriguez <ismael.rm.1986@gmail.com>",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "scripts": {
+    "add-countries": "node ./import-data/add-countries.js",
+    "add-time-series": "node ./import-data/add-time-series.js",
+    "build": "sanity build",
     "dev": "sanity start",
     "format": "prettier-eslint --write \"**/*.js\" \"!node_modules/**\"",
-    "build": "sanity build",
+    "generate-dates": "node ./import-data/generate-dates",
     "graphql-deploy": "sanity graphql deploy --playground",
     "lint": "eslint .",
     "test": "sanity check"
@@ -30,7 +33,10 @@
     "react-dom": "^16.2"
   },
   "devDependencies": {
+    "axios": "^0.19.2",
     "babel-eslint": "^10.1.0",
+    "csvtojson": "^2.0.10",
+    "dotenv": "^8.2.0",
     "eslint": "^6.8.0",
     "eslint-config-standard": "^14.1.1",
     "eslint-config-standard-react": "^9.2.0",
@@ -39,6 +45,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-standard": "^4.0.1",
+    "lodash": "^4.17.15",
     "prettier": "^1.19.1",
     "prettier-eslint-cli": "^5.0.0"
   }
