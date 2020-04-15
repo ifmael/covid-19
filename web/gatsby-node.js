@@ -1,9 +1,8 @@
 async function createBlogPostPages(graphql, actions) {
-  const {
-    createPage
-  } = actions;
-
   try {
+    const { createPage } = actions;
+    const path = require(`path`);
+    const slash = require(`slash`);
     const dates = require('./src/assets/dates');
     const transformCountriesTimeSeries = require('./src/transform/time-series');
 
@@ -34,18 +33,18 @@ async function createBlogPostPages(graphql, actions) {
     }
 
     const countriesTimeSeries = transformCountriesTimeSeries(result.data.allSanityTimeSeries.nodes);
-
-/*     countriesTimeSeries.forEach(country => {
+    const countryComponentPath = path.resolve('./src/templates/country.js');
+    countriesTimeSeries.forEach(country => {
+      const { name, ...datesInfo} = country;
       createPage({
-        path: `/country/${country.name.toLocaleLowerCase().replace(' ','-')}`,
+        path: `/country/${country.name.toLowerCase().replace(' ','-').replace('*','')}`,
         component: slash(countryComponentPath),
-        context:{
-          country: country,
+        context: {
+          name,
+          datesInfo
         }
       })
-    }); */
-
-
+    });
 
   } catch (error) {
     console.log(error);
@@ -53,6 +52,9 @@ async function createBlogPostPages(graphql, actions) {
 
 }
 
-exports.createPages = async ({graphql, actions}) => {
+exports.createPages = async ({
+  graphql,
+  actions
+}) => {
   await createBlogPostPages(graphql, actions)
 }
