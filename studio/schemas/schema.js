@@ -6,6 +6,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 import country from './documents/country'
 import timeSeries from './documents/timeSeries'
 import infoDate from './objects/infoDate'
+import countryInfoAggregated from './documents/countryInfoAggregated'
 
 import dates from '../import-data/assets/dates'
 
@@ -19,7 +20,8 @@ export default createSchema({
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
     country,
-    timeSeries,
-    infoDate
+    countryInfoAggregated,
+    infoDate,
+    timeSeries
   ])
 })
