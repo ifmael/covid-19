@@ -36,7 +36,6 @@ const Country = ({pageContext}) => {
   debugger
   return (
     <Layout>
-      <p>Hello {name} </p>
       <HighchartsReact
         highcharts={Highcharts}
         options={optionsChart}
