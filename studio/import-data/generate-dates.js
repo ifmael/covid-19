@@ -31,8 +31,10 @@
     }`;
 
     await fsp.writeFile(`${currentDirectory}/assets/dates.js`,datesInJS);
+    await fsp.writeFile(`${currentDirectory}/assets/dates-require.js`,datesRequireWay);
     await fsp.writeFile(`${webDirectory}/assets/dates.js`,datesRequireWay);
     console.log(`File saved on: ${currentDirectory}/assets/dates.js`);
+    console.log(`File saved on: ${currentDirectory}/assets/dates-require.js`);
     console.log(`File saved on: ${webDirectory}/assets/dates.js`);
   } catch (error) {
     console.log(error);
