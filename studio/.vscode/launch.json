@@ -12,7 +12,7 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}\\import-data\\add-countries-info-aggregated.js"
+      "program": "${workspaceFolder}\\import-data\\add-countries.js"
     }
   ]
 }

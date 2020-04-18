@@ -38,6 +38,16 @@ export default {
       name: 'location',
       title: 'Location',
       type: 'geopoint'
+    },
+    {
+      name: 'oneToOne',
+      type: 'image',
+      title: 'Flags with aspect ratio 1:1'
+    },
+    {
+      name: 'fourToThree',
+      type: 'image',
+      title: 'Flags with aspect ratio 4:3'
     }
   ]
 }
