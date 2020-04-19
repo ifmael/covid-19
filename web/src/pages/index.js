@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import Layout from '../components/layout'
+import CountryList from '../components/country-list'
 
 const IndexPage = () => (
   <StaticQuery
@@ -14,7 +15,7 @@ const IndexPage = () => (
               deaths
               recovered
             }
-            country {
+            countryName: country {
               name
             }
             _id
@@ -24,20 +25,9 @@ const IndexPage = () => (
     }
     render ={ data => {
       const countriesAggregated = data.allSanityCountryInfoAggregated.nodes
-      const countries = countriesAggregated.map(countryInfo => {
-        return (
-          <div key={countryInfo._id} >
-            <h1>Name: {countryInfo.country.name}</h1>
-            <h2>Confirmed: {countryInfo.infoForLastDate.confirmed}</h2>
-            <h2>Recovered: {countryInfo.infoForLastDate.recovered}</h2>
-            <h2>Deaths: {countryInfo.infoForLastDate.deaths}</h2>
-            <hr/>
-          </div>
-        )
-      })
       return (
         <Layout>
-          {countries}
+          <CountryList list={countriesAggregated} />
           <Link to="/page-2/">Go to page 2</Link>
         </Layout>
       )

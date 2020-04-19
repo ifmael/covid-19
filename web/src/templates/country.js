@@ -28,12 +28,10 @@ const Country = ({pageContext}) => {
   const series = [
     { name: `Confirmed`, data: confirmed },
     { name: `Deaths`, data: deaths },
-    { name: `Recovered`, data: recovered },
+    { name: `Recovered`, data: recovered }
   ]
   const optionsChart = lineChart(`Country: ${name}`, Date.UTC(getYear(startDate), getMonth(startDate) - 1 ,getDate(startDate) ), (24 * 3600 * 1000), 'lineal', series);
 
-
-  debugger
   return (
     <Layout>
       <HighchartsReact
