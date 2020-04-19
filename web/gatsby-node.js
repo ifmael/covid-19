@@ -3,7 +3,7 @@ async function createBlogPostPages(graphql, actions) {
     const { createPage } = actions;
     const path = require(`path`);
     const slash = require(`slash`);
-    const dates = require('./src/assets/dates');
+    const dates = require('./src/assets/dates')
     const transformCountriesTimeSeries = require('./src/transform/time-series');
 
     let queryDates = ``;

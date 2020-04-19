@@ -36,7 +36,8 @@ module.exports = {
         // if you have a private dataset
         token: process.env.MY_SANITY_TOKEN,
       },
-    }
+    },
+    `gatsby-plugin-material-ui`
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
