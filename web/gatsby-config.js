@@ -1,3 +1,5 @@
+const clientConfig = require('./client-config')
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -30,8 +32,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-sanity',
       options: {
-        projectId: 'hr16dxf5',
-        dataset: 'production',
+        ...clientConfig.sanity,
         // a token with read permissions is required
         // if you have a private dataset
         token: process.env.MY_SANITY_TOKEN,

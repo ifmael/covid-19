@@ -15,8 +15,18 @@ const IndexPage = () => (
               deaths
               recovered
             }
-            countryName: country {
+            country {
               name
+              fourToThree {
+                asset {
+                  _id
+                }
+              }
+              oneToOne {
+                asset {
+                  _id
+                }
+              }
             }
             _id
           }

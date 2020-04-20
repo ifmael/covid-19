@@ -5,9 +5,10 @@ import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent'
 import Link from '@material-ui/core/Link'
 import Typography from '@material-ui/core/Typography'
+import Flag from './flag'
 
 const CountryCard = ({ info }) => {
-  const { countryName, infoForLastDate, path } = info
+  const { country, infoForLastDate, path } = info
   const useStyles = makeStyles({
     root: {
       minWidth: 275
@@ -30,8 +31,11 @@ const CountryCard = ({ info }) => {
     <Card className={classes.root} >
       <CardContent>
         <Typography variant="h5" component="h2" >
-          {countryName.name}
+          {country.name}
         </Typography>
+        { (country.fourToThree || country.oneToOne ) &&
+          <Flag image={ country.fourToThree || country.oneToOne } />
+        }
         <Typography variant="body2" >
           Confirmed: {infoForLastDate.confirmed}
         </Typography>
