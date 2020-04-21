@@ -5,37 +5,23 @@ import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent'
 import Link from '@material-ui/core/Link'
 import Typography from '@material-ui/core/Typography'
-import Flag from './flag'
+import CountryHeaderCard from '../components/country-header-card'
+
 
 const CountryCard = ({ info }) => {
   const { country, infoForLastDate, path } = info
   const useStyles = makeStyles({
     root: {
       minWidth: 275
-    },
-    bullet: {
-      display: 'inline-block',
-      margin: '0 2px',
-      transform: 'scale(0.8)'
-    },
-    title: {
-      fontSize: 14
-    },
-    pos: {
-      marginBottom: 12
     }
+
   })
   const classes = useStyles()
 
   return (
     <Card className={classes.root} >
+      <CountryHeaderCard name={country.name} image={country.fourToThree || country.oneToOne} />
       <CardContent>
-        <Typography variant="h5" component="h2" >
-          {country.name}
-        </Typography>
-        { (country.fourToThree || country.oneToOne ) &&
-          <Flag image={ country.fourToThree || country.oneToOne } />
-        }
         <Typography variant="body2" >
           Confirmed: {infoForLastDate.confirmed}
         </Typography>
