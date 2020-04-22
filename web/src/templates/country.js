@@ -29,7 +29,7 @@ const Country = ({pageContext}) => {
   ]
   const confLineChart = {
     title: `Country: ${name}`,
-    pointStart: Date.UTC(getYear(startDate), getMonth(startDate) - 1, getDate(startDate)),
+    pointStart: Date.UTC(getYear(startDate), getMonth(startDate) , getDate(startDate)),
     pointInterval: (24 * 3600 * 1000),
     scale: ['lineal', 'logarithmic'],
     series
