@@ -12,9 +12,11 @@
     "build": "sanity build",
     "dev": "sanity start",
     "delete-entries": "node ./import-data/delete-entries.js",
+    "deploy": "sanity deploy",
+    "feed-data": "npm run generate-dates && npm run deploy && npm run add-time-series && npm run graphql-deploy",
     "format": "prettier-eslint --write \"**/*.js\" \"!node_modules/**\"",
     "generate-dates": "node ./import-data/generate-dates.js",
-    "graphql-deploy": "sanity graphql deploy --playground",
+    "graphql-deploy": "sanity graphql deploy --playground --yes",
     "lint": "eslint .",
     "test": "sanity check"
   },
