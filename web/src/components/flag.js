@@ -2,7 +2,7 @@ import React from 'react'
 import { imageUrlFor } from '../lib/image-url'
 
 const noPadding = {
-  'margin-bottom': '0px'
+  'marginBottom': '0px'
 }
 
 const Flag = ({ name, image }) => (

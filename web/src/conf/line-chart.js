@@ -1,5 +1,4 @@
 export default (title, pointStart, pointInterval, scale, series ) => {
-  debugger
   return {
     title: {
       text: title

@@ -16,7 +16,6 @@ const Chart = ({conf}) => {
       }
     }
   }
-
   return (
     <>
       <HighchartsReact
