@@ -1,4 +1,4 @@
-export default (title, pointStart, pointInterval, scale, series ) => {
+export default (title, pointStart, pointInterval, scale, series) => {
   return {
     title: {
       text: title

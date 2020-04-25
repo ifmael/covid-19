@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
-import lineChart from '../conf/line-chart'
+import lineChart from '../../conf/line-chart'
 
-const Chart = ({conf}) => {
+const LineChart = ({ conf }) => {
   const { title, pointStart, pointInterval, scale, series } = conf
   const confLinealChart = lineChart(title, pointStart, pointInterval, scale, series)
   const [startOptionsChart, updateYAxis] = useState(confLinealChart)
@@ -31,4 +31,4 @@ const Chart = ({conf}) => {
   )
 }
 
-export default Chart
+export default LineChart
