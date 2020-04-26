@@ -8,6 +8,11 @@ export default {
       name: 'country',
       type: 'reference',
       to: [{type:'country'}]
+    },
+    {
+      name: 'lastDate',
+      title: 'Information related for the last date aggregaded',
+      type : 'infoDate'
     }
   ]
 }

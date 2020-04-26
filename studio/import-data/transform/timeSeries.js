@@ -1,3 +1,6 @@
+const max = require('date-fns/max')
+const format = require('date-fns/format')
+
 const groupByRegionsForCountry = (country) => {
   return country.reduce((result, value) => {
     Object.keys(value)
@@ -31,11 +34,21 @@ module.exports = {
     const infoCountry = listCountries.find(country => country.name === countryName);
     if(infoCountry === undefined)
       console.log(countryName)
+
+    //Get te last date
+    const dates = Object.keys(casesCountry).map(date =>{
+      const [day, month, year] = date.slice(5).split('_');
+      return new Date(`20${year}`, Number(month) - 1, day);
+    })
+    const lastDate = max(dates);
+    const formatedDate = `date_${format(lastDate, 'd_M_yy')}`;
+
     return {
       _id: `time-series-${countryName.replace(/ /gi, '-').replace(/\(/gi,'').replace(/\)/gi,'').replace(/\'/gi,'-').replace(/\,/gi,'').replace(/\*/gi,'').toLocaleLowerCase()}`,
       _type: 'timeSeries',
       ...casesCountry,
-      country: {_type: 'reference', _ref: infoCountry.id}
+      country: {_type: 'reference', _ref: infoCountry.id},
+      lastDate: casesCountry[formatedDate]
     }
   }
 }
