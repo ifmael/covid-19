@@ -38,7 +38,7 @@
     "react-dom": "^16.2"
   },
   "devDependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "babel-eslint": "^10.1.0",
     "csvtojson": "^2.0.10",
     "dotenv": "^8.2.0",
